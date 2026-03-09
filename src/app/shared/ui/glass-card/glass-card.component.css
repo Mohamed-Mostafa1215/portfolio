@@ -1,0 +1,26 @@
+/* DARK (default) */
+.glass-card {
+  background: linear-gradient(135deg, rgba(18,40,48,0.8), rgba(7,19,24,0.9));
+  border: 1px solid #1e3a47;
+}
+.glass-card:hover {
+  box-shadow: 0 0 20px rgba(0,255,255,0.1);
+  border-color: rgba(0,255,255,0.3);
+}
+.glass-glow {
+  background: linear-gradient(to right, transparent, rgba(0,255,255,0.2), transparent);
+}
+
+/* LIGHT */
+:host-context(.light) .glass-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+:host-context(.light) .glass-card:hover {
+  box-shadow: 0 4px 20px rgba(8,145,178,0.12);
+  border-color: rgba(8,145,178,0.3);
+}
+:host-context(.light) .glass-glow {
+  background: linear-gradient(to right, transparent, rgba(8,145,178,0.15), transparent);
+}

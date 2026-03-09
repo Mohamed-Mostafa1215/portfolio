@@ -1,0 +1,41 @@
+/* DARK primary */
+.btn-primary {
+  background: #0ff;
+  color: #000;
+  border: 2px solid #0ff;
+  box-shadow: 0 0 15px rgba(0,255,255,0.4);
+}
+.btn-primary:hover {
+  background: transparent;
+  color: #fff;
+  box-shadow: 0 0 25px rgba(0,255,255,0.6);
+}
+.btn-outline {
+  background: transparent;
+  color: #0ff;
+  border: 1px solid #0ff;
+}
+.btn-outline:hover { background: rgba(0,255,255,0.1); }
+.btn-disabled {
+  background: #374151;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* LIGHT primary */
+:host-context(.light) .btn-primary {
+  background: #0891b2;
+  color: #fff;
+  border: 2px solid #0891b2;
+  box-shadow: 0 4px 14px rgba(8,145,178,0.3);
+}
+:host-context(.light) .btn-primary:hover {
+  background: transparent;
+  color: #0891b2;
+  box-shadow: 0 4px 20px rgba(8,145,178,0.4);
+}
+:host-context(.light) .btn-outline {
+  color: #0891b2;
+  border: 1px solid #0891b2;
+}
+:host-context(.light) .btn-outline:hover { background: rgba(8,145,178,0.08); }

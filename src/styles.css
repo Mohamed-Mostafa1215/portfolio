@@ -1,3 +1,96 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "tailwindcss";
+
+/* Global interactive element styles */
+html { scroll-behavior: smooth; }
+
+a, button, [routerLink], [role="button"], select,
+input[type="submit"], input[type="button"], input[type="reset"] {
+  cursor: pointer;
+}
+
+a:not([href]) { cursor: default; }
+
+@layer utilities {
+  .neon-box {
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1), inset 0 0 10px rgba(0, 255, 255, 0.05);
+    background: rgba(7, 19, 24, 0.8);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+  
+  .neon-box:hover {
+    border-color: rgba(0, 255, 255, 0.9);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), inset 0 0 15px rgba(0, 255, 255, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .neon-text-glow {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+  }
+}
+
+/* Orbit Swoosh Trails */
+  .orbit-ring-1 {
+    position: absolute;
+    width: 130%;
+    height: 130%;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, transparent 60%, rgba(0, 255, 255, 0.8) 100%);
+    -webkit-mask-image: radial-gradient(circle at center, transparent 68%, black 69%, black 70%, transparent 71%);
+    mask-image: radial-gradient(circle at center, transparent 68%, black 69%, black 70%, transparent 71%);
+    top: -15%;
+    left: -15%;
+    transform-style: preserve-3d;
+    animation: rotate-ring 6s linear infinite;
+  }
+  
+  .orbit-ring-1::before {
+    content: '';
+    position: absolute;
+    top: 14%;
+    left: 14%;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 5px rgba(0, 255, 255, 1);
+  }
+
+  .orbit-ring-2 {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    border-radius: 50%;
+    background: conic-gradient(from 180deg, transparent 60%, rgba(0, 255, 255, 0.6) 100%);
+    -webkit-mask-image: radial-gradient(circle at center, transparent 68%, black 69%, black 70%, transparent 71%);
+    mask-image: radial-gradient(circle at center, transparent 68%, black 69%, black 70%, transparent 71%);
+    top: -5%;
+    left: -5%;
+    transform-style: preserve-3d;
+    animation: rotate-ring-reverse 8s linear infinite;
+  }
+
+  .orbit-ring-2::before {
+    content: '';
+    position: absolute;
+    bottom: 14%;
+    right: 14%;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 4px rgba(0, 255, 255, 1);
+  }
+
+  @keyframes rotate-ring {
+    0% { transform: rotateX(65deg) rotateY(-15deg) rotateZ(0deg); }
+    100% { transform: rotateX(65deg) rotateY(-15deg) rotateZ(360deg); }
+  }
+
+  @keyframes rotate-ring-reverse {
+    0% { transform: rotateX(70deg) rotateY(20deg) rotateZ(360deg); }
+    100% { transform: rotateX(70deg) rotateY(20deg) rotateZ(0deg); }
+  }

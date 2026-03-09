@@ -1,0 +1,11 @@
+<button 
+  [type]="type"
+  (click)="onClick.emit($event)"
+  class="agency-btn group relative inline-flex items-center justify-center font-bold transition-all duration-300 overflow-hidden rounded-full"
+  [ngClass]="[variantClass, sizeClasses, block ? 'w-full' : '']"
+  [disabled]="disabled"
+>
+  <span class="relative z-10 flex items-center gap-2">
+    <ng-content></ng-content>
+  </span>
+</button>

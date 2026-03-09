@@ -1,0 +1,28 @@
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* LIGHT OVERRIDES */
+:host-context(.light) [class~="text-white"] { color: #1a202c !important; }
+:host-context(.light) [class~="text-gray-400"] { color: #64748b !important; }
+:host-context(.light) [class~="bg-[#0b1b21]"] { background-color: #fff !important; }
+:host-context(.light) [class~="border-[#1e3a47]"] { border-color: #cbd5e1 !important; }
+:host-context(.light) [class~="bg-[#1e3a47]/50"] { background-color: #e2e8f0 !important; }
+:host-context(.light) [class~="bg-black/40"] { background-color: rgba(255,255,255,0.85) !important; }
+:host-context(.light) [class~="text-[#0ff]"] { color: #0891b2 !important; }
+:host-context(.light) [class~="border-[#0ff]"] { border-color: #0891b2 !important; }
+:host-context(.light) [class~="bg-[#0ff]/10"] { background-color: rgba(8,145,178,0.1) !important; }
+:host-context(.light) [class~="shadow-[0_0_15px_rgba(0,255,255,0.3)]"] { box-shadow: 0 0 15px rgba(8,145,178,0.3) !important; }
+
+.neon-box {
+  transition: all 0.3s ease;
+}
+
+.neon-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -10px rgba(0, 255, 255, 0.2);
+}

@@ -1,0 +1,13 @@
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* LIGHT OVERRIDES */
+:host-context(.light) [class~="text-white"] { color: #1a202c !important; }
+:host-context(.light) [class~="text-gray-400"] { color: #64748b !important; }
+:host-context(.light) [class~="text-[#0ff]"] { color: #0891b2 !important; }
+:host-context(.light) [class~="bg-[#0ff]"] { background-color: #0891b2 !important; }

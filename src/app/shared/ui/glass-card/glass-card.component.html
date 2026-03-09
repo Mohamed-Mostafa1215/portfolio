@@ -1,0 +1,9 @@
+<div 
+  class="glass-card relative overflow-hidden rounded-2xl backdrop-blur-md transition-all duration-300 group"
+  [ngClass]="paddingClasses"
+>
+  <!-- Subtle top inner glow -->
+  <div class="glass-glow absolute top-0 left-0 w-full h-[1px] transition-colors duration-500"></div>
+  
+  <ng-content></ng-content>
+</div>

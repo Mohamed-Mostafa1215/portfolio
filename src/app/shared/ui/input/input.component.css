@@ -1,0 +1,32 @@
+/* DARK (default) */
+.input-label { color: #9ca3af; }
+.input-glow {
+  background: linear-gradient(to right, rgba(0,255,255,0), rgba(0,255,255,0.5), rgba(0,255,255,0));
+}
+.input-field {
+  background: rgba(7,19,24,0.8);
+  border: 1px solid rgba(0,255,255,0.4);
+  box-shadow: 0 0 10px rgba(0,255,255,0.05), inset 0 0 5px rgba(0,255,255,0.05);
+  color: #fff;
+}
+.input-field::placeholder { color: #6b7280; }
+.input-field:focus {
+  border-color: rgba(0,255,255,0.9);
+  box-shadow: 0 0 15px rgba(0,255,255,0.2), inset 0 0 10px rgba(0,255,255,0.1);
+}
+
+/* LIGHT */
+:host-context(.light) .input-label { color: #64748b; }
+:host-context(.light) .input-glow {
+  background: linear-gradient(to right, rgba(8,145,178,0), rgba(8,145,178,0.4), rgba(8,145,178,0));
+}
+:host-context(.light) .input-field {
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  color: #1a202c;
+}
+:host-context(.light) .input-field::placeholder { color: #94a3b8; }
+:host-context(.light) .input-field:focus {
+  border-color: #0891b2;
+  box-shadow: 0 0 0 2px rgba(8,145,178,0.15);
+}

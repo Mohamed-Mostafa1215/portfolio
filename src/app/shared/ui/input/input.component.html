@@ -1,0 +1,34 @@
+<div class="flex flex-col gap-1 w-full mb-4">
+  @if (label) {
+    <label class="input-label text-xs font-semibold ml-1">{{ label }}</label>
+  }
+  
+  <div class="relative group">
+    <!-- Input glow effect on focus -->
+    <div class="input-glow absolute -inset-[1px] rounded-lg opacity-0 group-focus-within:opacity-100 blur-[2px] transition-opacity duration-300"></div>
+    
+    @if (type !== 'textarea') {
+      <input
+        [type]="type"
+        [placeholder]="placeholder"
+        [disabled]="disabled"
+        [(ngModel)]="value"
+        (blur)="onTouched()"
+        (input)="onInput()"
+        class="input-field relative w-full rounded-lg px-4 py-3 text-sm focus:outline-none transition-all duration-300"
+      />
+    }
+    
+    @if (type === 'textarea') {
+      <textarea
+        [placeholder]="placeholder"
+        [disabled]="disabled"
+        [(ngModel)]="value"
+        (blur)="onTouched()"
+        (input)="onInput()"
+        [rows]="rows"
+        class="input-field relative w-full rounded-lg px-4 py-3 text-sm focus:outline-none transition-all duration-300 resize-none"
+      ></textarea>
+    }
+  </div>
+</div>
