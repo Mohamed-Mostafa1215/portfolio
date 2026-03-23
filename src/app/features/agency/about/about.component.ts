@@ -13,7 +13,7 @@ import { GlassCardComponent } from '../../../shared/ui/glass-card/glass-card.com
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AboutComponent implements OnInit {
-  agencyService = inject(AgencyService);
+  private agencyService = inject(AgencyService);
   private destroyRef = inject(DestroyRef);
   team: TeamMember[] = [];
 

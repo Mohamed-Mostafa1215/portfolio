@@ -1,32 +1,81 @@
 /* DARK (default) */
-.input-label { color: #9ca3af; }
+.input-label { 
+  color: #9ca3af; 
+  transition: color 0.3s ease;
+}
+
+.input-wrapper:focus-within .input-label {
+  color: #0ff;
+}
+
 .input-glow {
   background: linear-gradient(to right, rgba(0,255,255,0), rgba(0,255,255,0.5), rgba(0,255,255,0));
+  transition: opacity 0.3s ease;
 }
+
 .input-field {
   background: rgba(7,19,24,0.8);
-  border: 1px solid rgba(0,255,255,0.4);
+  border: 1px solid rgba(0,255,255,0.3);
   box-shadow: 0 0 10px rgba(0,255,255,0.05), inset 0 0 5px rgba(0,255,255,0.05);
   color: #fff;
+  transition: all 0.3s ease;
 }
-.input-field::placeholder { color: #6b7280; }
+
+.input-field::placeholder { 
+  color: #6b7280; 
+  transition: color 0.3s ease;
+}
+
 .input-field:focus {
   border-color: rgba(0,255,255,0.9);
-  box-shadow: 0 0 15px rgba(0,255,255,0.2), inset 0 0 10px rgba(0,255,255,0.1);
+  box-shadow: 0 0 20px rgba(0,255,255,0.25), inset 0 0 10px rgba(0,255,255,0.1);
+  outline: none;
+}
+
+.input-field:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.input-field:hover:not(:focus):not(:disabled) {
+  border-color: rgba(0,255,255,0.5);
+}
+
+/* Floating label effect */
+.input-field:not(:placeholder-shown) + .floating-label,
+.input-field:focus + .floating-label {
+  transform: translateY(-24px) scale(0.85);
+  color: #0ff;
 }
 
 /* LIGHT */
-:host-context(.light) .input-label { color: #64748b; }
+:host-context(.light) .input-label { 
+  color: #64748b; 
+}
+
+:host-context(.light) .input-wrapper:focus-within .input-label {
+  color: #0891b2;
+}
+
 :host-context(.light) .input-glow {
   background: linear-gradient(to right, rgba(8,145,178,0), rgba(8,145,178,0.4), rgba(8,145,178,0));
 }
+
 :host-context(.light) .input-field {
   background: #fff;
   border: 1px solid #cbd5e1;
   color: #1a202c;
 }
-:host-context(.light) .input-field::placeholder { color: #94a3b8; }
+
+:host-context(.light) .input-field::placeholder { 
+  color: #94a3b8; 
+}
+
 :host-context(.light) .input-field:focus {
   border-color: #0891b2;
-  box-shadow: 0 0 0 2px rgba(8,145,178,0.15);
+  box-shadow: 0 0 0 3px rgba(8,145,178,0.15);
+}
+
+:host-context(.light) .input-field:hover:not(:focus):not(:disabled) {
+  border-color: #0891b2;
 }

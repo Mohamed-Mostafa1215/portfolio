@@ -14,7 +14,7 @@ import { ButtonComponent } from '../../../shared/ui/button/button.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectsComponent implements OnInit {
-  agencyService = inject(AgencyService);
+  private agencyService = inject(AgencyService);
   private destroyRef = inject(DestroyRef);
   private cdr = inject(ChangeDetectorRef);
   projects: Project[] = [];

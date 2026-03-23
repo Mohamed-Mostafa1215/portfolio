@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AgencyService } from '../../../core/services/agency.service';
@@ -15,7 +15,7 @@ import { InputComponent } from '../../../shared/ui/input/input.component';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent {
-  agencyService = inject(AgencyService);
+  private agencyService = inject(AgencyService);
   
   form: ContactForm = {
     name: '',
@@ -24,40 +24,59 @@ export class ContactComponent {
     message: ''
   };
   
-  submitting = false;
-  success = false;
-  errors: { [key: string]: string } = {};
+  submitting = signal(false);
+  success = signal(false);
+  error = signal<string | null>(null);
+  errors = signal<{ [key: string]: string }>({});
 
   validate(): boolean {
-    this.errors = {};
+    const newErrors: { [key: string]: string } = {};
     
     if (!this.form.name.trim()) {
-      this.errors['name'] = 'Name is required';
+      newErrors['name'] = 'Name is required';
     }
     
     if (!this.form.email.trim()) {
-      this.errors['email'] = 'Email is required';
+      newErrors['email'] = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.form.email)) {
-      this.errors['email'] = 'Please enter a valid email';
+      newErrors['email'] = 'Please enter a valid email';
     }
     
     if (!this.form.message.trim()) {
-      this.errors['message'] = 'Message is required';
+      newErrors['message'] = 'Message is required';
     }
     
-    return Object.keys(this.errors).length === 0;
+    this.errors.set(newErrors);
+    return Object.keys(newErrors).length === 0;
   }
 
   onSubmit() {
+    this.error.set(null);
+    
     if (!this.validate()) return;
     
-    this.submitting = true;
-    this.agencyService.submitContactForm(this.form).subscribe(() => {
-      this.submitting = false;
-      this.success = true;
-      this.form = { name: '', email: '', projectType: '', message: '' };
-      this.errors = {};
-      setTimeout(() => this.success = false, 5000);
+    this.submitting.set(true);
+    this.agencyService.submitContactForm(this.form).subscribe({
+      next: (response) => {
+        this.submitting.set(false);
+        if (response.success) {
+          this.success.set(true);
+          this.form = { name: '', email: '', projectType: '', message: '' };
+          this.errors.set({});
+          setTimeout(() => this.success.set(false), 5000);
+        } else {
+          this.error.set(response.message || 'Failed to send message. Please try again.');
+        }
+      },
+      error: (err) => {
+        this.submitting.set(false);
+        this.error.set('An error occurred. Please try again later.');
+        console.error('Contact form error:', err);
+      }
     });
+  }
+
+  clearError() {
+    this.error.set(null);
   }
 }

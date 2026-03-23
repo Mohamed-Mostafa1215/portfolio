@@ -1,6 +1,9 @@
+<!-- Skip to main content link for accessibility -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <!-- Top Loading Bar -->
 @if (loadingService.isLoading()) {
-  <div class="fixed top-0 left-0 w-full h-[4px] z-50 bg-[#071318] overflow-hidden">
+  <div class="fixed top-0 left-0 w-full h-[4px] z-[60]" role="progressbar" aria-label="Page loading" aria-live="polite">
     <div class="h-full bg-[#0ff] indeterminate-bar"></div>
   </div>
 }
@@ -8,13 +11,13 @@
 <div class="agency-root min-h-screen flex flex-col font-sans relative overflow-hidden transition-colors duration-500"
      [class.light]="!themeService.isDark()">
   <!-- Background Effects -->
-  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+  <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
     <!-- Major corner glows -->
     <div class="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-[#0ff] opacity-[0.07] blur-[120px] rounded-full transition-opacity duration-500"></div>
     <div class="absolute top-[40%] -right-[10%] w-[50%] h-[70%] bg-[#0ff] opacity-[0.05] blur-[150px] rounded-full transition-opacity duration-500"></div>
     
     <!-- Left Circuit -->
-    <svg class="absolute top-[15%] left-0 w-64 h-[600px] opacity-20 drop-shadow-[0_0_8px_rgba(0,255,255,0.8)] text-[#0ff] transition-opacity duration-500" fill="none" stroke="currentColor" stroke-width="1.5">
+    <svg class="absolute top-[15%] left-0 w-64 h-[600px] opacity-20 drop-shadow-[0_0_8px_rgba(0,255,255,0.8)] text-[#0ff] transition-opacity duration-500" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
        <path d="M0 40 h50 l30 30 h100" />
        <circle cx="180" cy="70" r="3" fill="currentColor"/>
        <path d="M0 80 h80 l30 -30 h50" />
@@ -32,7 +35,7 @@
     </svg>
     
     <!-- Right Circuit -->
-    <svg class="absolute top-[25%] right-0 w-64 h-[600px] opacity-20 drop-shadow-[0_0_8px_rgba(0,255,255,0.8)] text-[#0ff] transition-opacity duration-500" fill="none" stroke="currentColor" stroke-width="1.5">
+    <svg class="absolute top-[25%] right-0 w-64 h-[600px] opacity-20 drop-shadow-[0_0_8px_rgba(0,255,255,0.8)] text-[#0ff] transition-opacity duration-500" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
        <path d="M256 40 h-50 l-30 30 h-100" />
        <circle cx="76" cy="70" r="3" fill="currentColor"/>
        <path d="M256 80 h-80 l-30 -30 h-50" />
@@ -51,44 +54,45 @@
   </div>
 
   <!-- Header -->
-  <header class="relative z-10 w-full px-8 py-5 flex items-center justify-between mx-auto max-w-[1400px]">
+  <header class="relative z-10 w-full px-8 py-5 flex items-center justify-between mx-auto max-w-[1400px]" role="banner">
     <!-- Logo -->
-    <div class="flex items-center gap-3 cursor-pointer" routerLink="/agency/home">
-      <div class="logo-icon w-8 h-8 flex items-center justify-center">
+    <a routerLink="/agency/home" class="flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] rounded-lg" aria-label="WebDev - Go to homepage">
+      <div class="logo-icon w-8 h-8 flex items-center justify-center" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="currentColor" class="w-full h-full">
           <path d="M12 2L2 22h20L12 2zm0 4l6 14H6l6-14z"/>
         </svg>
       </div>
       <span class="logo-text text-xl font-bold tracking-wide">WebDev</span>
-    </div>
+    </a>
 
     <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-      <a routerLink="/agency/home" routerLinkActive="nav-active" [routerLinkActiveOptions]="{exact: true}" class="nav-link transition-colors">Home</a>
-      <a routerLink="/agency/about" routerLinkActive="nav-active" class="nav-link transition-colors">About</a>
-      <a routerLink="/agency/projects" routerLinkActive="nav-active" class="nav-link transition-colors">Projects</a>
-      <a routerLink="/agency/testimonials" routerLinkActive="nav-active" class="nav-link transition-colors">Testimonials</a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium" role="navigation" aria-label="Main navigation">
+      <a routerLink="/agency/home" routerLinkActive="nav-active" [routerLinkActiveOptions]="{exact: true}" class="nav-link transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] rounded px-2 py-1">Home</a>
+      <a routerLink="/agency/about" routerLinkActive="nav-active" class="nav-link transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] rounded px-2 py-1">About</a>
+      <a routerLink="/agency/projects" routerLinkActive="nav-active" class="nav-link transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] rounded px-2 py-1">Projects</a>
+      <a routerLink="/agency/testimonials" routerLinkActive="nav-active" class="nav-link transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] rounded px-2 py-1">Testimonials</a>
     </nav>
 
     <!-- CTA & Theme Toggle & Mobile Menu -->
     <div class="flex items-center gap-4 md:gap-6">
-      <button routerLink="/agency/contact" class="cta-btn px-6 py-2 rounded-full font-semibold text-sm hover:scale-105 transition-transform hidden sm:inline-flex">
+      <a routerLink="/agency/contact" class="cta-btn px-6 py-2 rounded-full font-semibold text-sm hover:scale-105 transition-transform hidden sm:inline-flex focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] focus-visible:ring-offset-2 focus-visible:ring-offset-[#030b0e]">
         Contact Us
-      </button>
+      </a>
       
       <!-- Theme Toggle -->
-      <button (click)="themeService.toggle()" class="theme-toggle w-14 h-7 rounded-full p-1 flex items-center relative transition-colors duration-300" aria-label="Toggle theme">
+      <button (click)="themeService.toggle()" class="theme-toggle w-14 h-7 rounded-full p-1 flex items-center relative transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] focus-visible:ring-offset-2 focus-visible:ring-offset-[#030b0e]" [attr.aria-label]="themeService.isDark() ? 'Switch to light mode' : 'Switch to dark mode'" [attr.aria-pressed]="!themeService.isDark()">
          <div class="toggle-knob w-5 h-5 rounded-full transition-all duration-300"
               [class.toggled]="!themeService.isDark()"></div>
          <span class="toggle-icon absolute text-xs transition-opacity duration-300"
                [class.left-icon]="themeService.isDark()"
-               [class.right-icon]="!themeService.isDark()">
+               [class.right-icon]="!themeService.isDark()"
+               aria-hidden="true">
            {{ themeService.isDark() ? '🌙' : '☀️' }}
          </span>
       </button>
 
       <!-- Mobile Hamburger -->
-      <button (click)="mobileMenuOpen = !mobileMenuOpen" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg" aria-label="Toggle menu">
+      <button (click)="mobileMenuOpen = !mobileMenuOpen" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff]" [attr.aria-expanded]="mobileMenuOpen" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
         <span class="hamburger-line block w-6 h-0.5 bg-current transition-all duration-300" [class.rotate-45]="mobileMenuOpen" [class.translate-y-2]="mobileMenuOpen"></span>
         <span class="hamburger-line block w-6 h-0.5 bg-current transition-all duration-300" [class.opacity-0]="mobileMenuOpen"></span>
         <span class="hamburger-line block w-6 h-0.5 bg-current transition-all duration-300" [class.-rotate-45]="mobileMenuOpen" [class.-translate-y-2]="mobileMenuOpen"></span>
@@ -98,66 +102,67 @@
 
   <!-- Mobile Nav Drawer -->
   @if (mobileMenuOpen) {
-    <nav class="mobile-nav md:hidden relative z-20 px-8 pb-6 flex flex-col gap-4 text-base font-medium animate-slide-down">
-      <a routerLink="/agency/home" routerLinkActive="nav-active" [routerLinkActiveOptions]="{exact: true}" (click)="mobileMenuOpen = false" class="nav-link py-2 transition-colors">Home</a>
-      <a routerLink="/agency/about" routerLinkActive="nav-active" (click)="mobileMenuOpen = false" class="nav-link py-2 transition-colors">About</a>
-      <a routerLink="/agency/projects" routerLinkActive="nav-active" (click)="mobileMenuOpen = false" class="nav-link py-2 transition-colors">Projects</a>
-      <a routerLink="/agency/testimonials" routerLinkActive="nav-active" (click)="mobileMenuOpen = false" class="nav-link py-2 transition-colors">Testimonials</a>
-      <a routerLink="/agency/contact" (click)="mobileMenuOpen = false" class="cta-btn px-6 py-2.5 rounded-full font-semibold text-sm text-center hover:scale-105 transition-transform mt-2">Contact Us</a>
+    <nav id="mobile-menu" class="mobile-nav md:hidden relative z-20 px-8 pb-6 flex flex-col gap-4 text-base font-medium animate-slide-down" role="navigation" aria-label="Mobile navigation">
+      <a routerLink="/agency/home" routerLinkActive="nav-active" [routerLinkActiveOptions]="{exact: true}" (click)="mobileMenuOpen = false" class="nav-link py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] rounded">Home</a>
+      <a routerLink="/agency/about" routerLinkActive="nav-active" (click)="mobileMenuOpen = false" class="nav-link py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] rounded">About</a>
+      <a routerLink="/agency/projects" routerLinkActive="nav-active" (click)="mobileMenuOpen = false" class="nav-link py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] rounded">Projects</a>
+      <a routerLink="/agency/testimonials" routerLinkActive="nav-active" (click)="mobileMenuOpen = false" class="nav-link py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] rounded">Testimonials</a>
+      <a routerLink="/agency/contact" (click)="mobileMenuOpen = false" class="cta-btn px-6 py-2.5 rounded-full font-semibold text-sm text-center hover:scale-105 transition-transform mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] focus-visible:ring-offset-2 focus-visible:ring-offset-[#030b0e]">Contact Us</a>
     </nav>
   }
 
   <!-- Main Content -->
-  <main class="relative z-10 flex-grow w-full max-w-[1400px] mx-auto px-4 sm:px-8 py-8">
+  <main id="main-content" class="relative z-10 flex-grow w-full max-w-[1400px] mx-auto px-4 sm:px-8 py-8" role="main" tabindex="-1">
     <router-outlet></router-outlet>
   </main>
 
   <!-- Footer -->
-  <footer class="footer relative z-10 w-full max-w-[1400px] mx-auto px-8 py-10 mt-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm transition-colors duration-500">
+  <footer class="footer relative z-10 w-full max-w-[1400px] mx-auto px-8 py-10 mt-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm transition-colors duration-500" role="contentinfo">
     <div>
       <div class="flex items-center gap-3 mb-4">
-        <div class="logo-icon w-6 h-6">
+        <div class="logo-icon w-6 h-6" aria-hidden="true">
            <svg viewBox="0 0 24 24" fill="currentColor" class="w-full h-full"><path d="M12 2L2 22h20L12 2zm0 4l6 14H6l6-14z"/></svg>
         </div>
         <span class="logo-text text-lg font-bold tracking-wide">WebDev</span>
       </div>
       <p class="footer-muted mb-4 text-xs leading-relaxed">Sign up to get the latest web techs and applications directly to your inbox.</p>
-      <div class="flex gap-2">
-        <input type="email" placeholder="*Your email" class="footer-input rounded-full px-4 py-2 w-full text-xs outline-none transition-colors duration-300">
-        <button class="cta-btn px-4 py-2 rounded-full font-semibold text-xs">Sign up</button>
-      </div>
+      <form class="flex gap-2" (submit)="$event.preventDefault()">
+        <label for="newsletter-email" class="sr-only">Email address</label>
+        <input id="newsletter-email" type="email" placeholder="*Your email" class="footer-input rounded-full px-4 py-2 w-full text-xs outline-none transition-colors duration-300 focus:border-[#0ff]" required>
+        <button type="submit" class="cta-btn px-4 py-2 rounded-full font-semibold text-xs hover:scale-105 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff]">Sign up</button>
+      </form>
     </div>
 
-    <div class="md:col-start-3">
+    <nav class="md:col-start-3" aria-label="Footer navigation - Important links">
       <h4 class="footer-heading font-semibold mb-4">Important Links</h4>
       <ul class="space-y-2 text-xs">
-         <li><a routerLink="/agency/home" class="footer-link transition-colors">Home</a></li>
-         <li><a routerLink="/agency/about" class="footer-link transition-colors">About</a></li>
-         <li><a routerLink="/agency/projects" class="footer-link transition-colors">Projects</a></li>
-         <li><a routerLink="/agency/contact" class="footer-link transition-colors">Contact</a></li>
+         <li><a routerLink="/agency/home" class="footer-link transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] rounded">Home</a></li>
+         <li><a routerLink="/agency/about" class="footer-link transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] rounded">About</a></li>
+         <li><a routerLink="/agency/projects" class="footer-link transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] rounded">Projects</a></li>
+         <li><a routerLink="/agency/contact" class="footer-link transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] rounded">Contact</a></li>
       </ul>
-    </div>
+    </nav>
 
     <div>
        <h4 class="footer-heading font-semibold mb-4">Social Media</h4>
-       <div class="flex gap-4">
-         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon w-8 h-8 rounded-full flex items-center justify-center transition-all" aria-label="Facebook">
-           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+       <div class="flex gap-4" role="list" aria-label="Social media links">
+         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon w-8 h-8 rounded-full flex items-center justify-center transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] focus-visible:ring-offset-2" role="listitem" aria-label="Visit our Facebook page">
+           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
          </a>
-         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon w-8 h-8 rounded-full flex items-center justify-center transition-all" aria-label="Twitter">
-           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon w-8 h-8 rounded-full flex items-center justify-center transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] focus-visible:ring-offset-2" role="listitem" aria-label="Visit our Twitter profile">
+           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
          </a>
-         <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon w-8 h-8 rounded-full flex items-center justify-center transition-all" aria-label="LinkedIn">
-           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 2a2 2 0 110 4 2 2 0 010-4z"/></svg>
+         <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon w-8 h-8 rounded-full flex items-center justify-center transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] focus-visible:ring-offset-2" role="listitem" aria-label="Visit our LinkedIn profile">
+           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 2a2 2 0 110 4 2 2 0 010-4z"/></svg>
          </a>
-         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon w-8 h-8 rounded-full flex items-center justify-center transition-all" aria-label="Instagram">
-           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon w-8 h-8 rounded-full flex items-center justify-center transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ff] focus-visible:ring-offset-2" role="listitem" aria-label="Visit our Instagram page">
+           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
          </a>
        </div>
     </div>
 
     <div class="col-span-full flex flex-col md:flex-row justify-between items-center text-xs mt-8 pt-6 footer-bottom-border">
-       <p class="footer-muted">All Rights reserved</p>
+       <p class="footer-muted">All Rights Reserved</p>
        <p class="footer-muted">&copy; 2026 WebDev</p>
     </div>
   </footer>
