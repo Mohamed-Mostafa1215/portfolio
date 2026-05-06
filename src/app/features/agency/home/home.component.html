@@ -1,214 +1,476 @@
 <div class="hero-bg-container">
-  <!-- Animated Background -->
+  <!-- Static Decorative Background -->
   <div class="hero-bg absolute inset-0 z-0 pointer-events-none overflow-hidden">
     <!-- Grid Pattern -->
     <div class="hero-grid"></div>
-    
-    <!-- Neon Light Trails (SVG swooshes) -->
-    <svg class="light-trail trail-1" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M-100 500 C200 500, 300 100, 600 200 S900 50, 1300 150" stroke="url(#trail1-grad)" stroke-width="2" stroke-linecap="round"/>
-      <defs>
-        <linearGradient id="trail1-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="transparent"/>
-          <stop offset="40%" stop-color="#0ff" stop-opacity="0"/>
-          <stop offset="60%" stop-color="#0ff" stop-opacity="0.8"/>
-          <stop offset="80%" stop-color="#0ff" stop-opacity="0.4"/>
-          <stop offset="100%" stop-color="transparent"/>
-        </linearGradient>
-      </defs>
-    </svg>
 
-    <svg class="light-trail trail-2" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M-100 100 C100 200, 400 50, 700 300 S1000 100, 1300 250" stroke="url(#trail2-grad)" stroke-width="1.5" stroke-linecap="round"/>
-      <defs>
-        <linearGradient id="trail2-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="transparent"/>
-          <stop offset="30%" stop-color="#0ff" stop-opacity="0"/>
-          <stop offset="50%" stop-color="#0ff" stop-opacity="0.6"/>
-          <stop offset="70%" stop-color="#0ff" stop-opacity="0.3"/>
-          <stop offset="100%" stop-color="transparent"/>
-        </linearGradient>
-      </defs>
-    </svg>
+    <!-- Static Geometric Shapes -->
+    <div class="geo-shape geo-1"></div>
+    <div class="geo-shape geo-2"></div>
+    <div class="geo-shape geo-3"></div>
 
-    <svg class="light-trail trail-3" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M1300 400 C1000 350, 800 500, 500 200 S200 400, -100 300" stroke="url(#trail3-grad)" stroke-width="2.5" stroke-linecap="round"/>
-      <defs>
-        <linearGradient id="trail3-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="transparent"/>
-          <stop offset="35%" stop-color="#0ff" stop-opacity="0"/>
-          <stop offset="55%" stop-color="#0ff" stop-opacity="0.7"/>
-          <stop offset="75%" stop-color="#0ff" stop-opacity="0.2"/>
-          <stop offset="100%" stop-color="transparent"/>
-        </linearGradient>
-      </defs>
-    </svg>
-
-    <!-- Floating Particles -->
-    <div class="particle p1"></div>
-    <div class="particle p2"></div>
-    <div class="particle p3"></div>
-    <div class="particle p4"></div>
-    <div class="particle p5"></div>
-    <div class="particle p6"></div>
-    <div class="particle p7"></div>
-    <div class="particle p8"></div>
-    <div class="particle p9"></div>
-    <div class="particle p10"></div>
-    <div class="particle p11"></div>
-    <div class="particle p12"></div>
-
-    <!-- Corner glow accents -->
+    <!-- Corner glow accents (static, subtle) -->
     <div class="hero-glow glow-tl"></div>
     <div class="hero-glow glow-br"></div>
-    <div class="hero-glow glow-center"></div>
   </div>
 
-  <div class="space-y-32 animate-fade-in-up relative z-10">
+  <div class="space-y-32 relative z-10">
     <!-- Hero Section -->
-    <section class="text-center pt-10 md:pt-20">
+    <section class="text-center pt-10 md:pt-20 hero-entry">
       <div class="max-w-4xl mx-auto space-y-6">
-         <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight neon-text-glow drop-shadow-2xl">
-           Crafting Next-Gen <br /> 
-           <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Digital Experiences</span>
-         </h1>
-         <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-           We build cutting-edge websites and applications using the latest technologies. Elevate your online presence with us.
-         </p>
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#0ff]/30 bg-[#0ff]/5 text-[#0ff] text-sm font-medium mb-4">
+          <span class="w-2 h-2 rounded-full bg-[#0ff] pulse-dot"></span>
+          وكالة تطوير مواقع احترافية
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight heading-glow">
+          نبني موقعك اللي يجيب لك <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0ff] via-white to-[#0ff]">عملاء جدد كل يوم</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          سواء كان متجر إلكتروني يبيع وأنت نايم، أو موقع شركة يبان أكبر من منافسيك — نحن نحول فكرتك لموقع يجذب الزوار ويضاعف مبيعاتك.
+        </p>
+        <div class="flex items-center justify-center gap-4 flex-wrap pt-2">
+          <button routerLink="/agency/projects" class="px-8 py-3 rounded-full font-bold text-sm bg-[#0ff] text-black shadow-[0_0_20px_rgba(0,255,255,0.4)] hover:shadow-[0_0_35px_rgba(0,255,255,0.7)] hover:scale-105 transition-all cursor-pointer">
+            شوف أعمالنا
+          </button>
+          <a href="https://wa.me/201152597819?text=مرحباً، أريد الحصول على استشارة مجانية لموقعي" target="_blank" class="px-8 py-3 rounded-full font-bold text-sm border border-[#0ff]/40 text-[#0ff] hover:bg-[#0ff]/10 hover:border-[#0ff] transition-all cursor-pointer">
+            احصل على استشارة مجانية الآن
+          </a>
+        </div>
+
+        <!-- Trust Bar -->
+        <div class="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-gray-400 font-medium opacity-80">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            تسليم في الموعد
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            ضمان التعديلات
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            دعم فني بعد التسليم
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            +20 مشروع منجز
+          </div>
+        </div>
+
+        <!-- Availability Badge -->
+        <div class="mt-6 flex justify-center animate-fade-in-up" style="animation-delay: 0.5s;">
+          <div class="bg-green-500/10 border border-green-500/30 rounded-full px-5 py-2 flex items-center gap-3 shadow-[0_0_15px_rgba(34,197,94,0.15)]">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </span>
+            <span class="text-sm font-bold text-white tracking-wide">
+              متاح للمشاريع الجديدة — <span class="text-green-400">استشارة مجانية الآن</span>
+            </span>
+          </div>
+        </div>
       </div>
 
       <!-- Hero Projects Carousel -->
       <div class="mt-20 relative w-full max-w-4xl mx-auto hero-mockup-wrapper">
-         
-         <!-- Orbit Rings -->
-         <div class="absolute inset-0 z-0 pointer-events-none perspective-[1000px] flex items-center justify-center">
-           <div class="orbit-ring-1"></div>
-           <div class="orbit-ring-2"></div>
-         </div>
-         
-         <div class="relative z-10 hero-mockup-frame rounded-3xl p-3 sm:p-5 overflow-hidden">
-           @if (currentProject) {
-             <!-- Project Screenshot -->
-             <a [href]="currentProject.liveUrl" target="_blank" class="block w-full aspect-video bg-[#030b0e] rounded-2xl relative overflow-hidden group border border-[#1e3a47] cursor-pointer">
-                <img [src]="currentProject.image" [alt]="currentProject.title" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-1000">
-                <!-- Overlay with project info -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6 sm:p-8">
-                  <div class="flex items-end justify-between">
-                    <div class="text-left">
-                      <span class="text-xs font-semibold px-3 py-1 bg-[#0ff]/20 rounded-full text-[#0ff] mb-3 inline-block">{{ currentProject.category }}</span>
-                      <h3 class="text-xl sm:text-2xl font-bold text-white mb-1">{{ currentProject.title }}</h3>
-                      <p class="text-sm text-gray-300 max-w-md hidden sm:block">{{ currentProject.description }}</p>
-                    </div>
-                    <div class="w-12 h-12 rounded-full bg-[#0ff] text-black shadow-[0_0_30px_rgba(0,255,255,0.8)] flex items-center justify-center cursor-pointer hover:scale-110 transition-transform z-20 flex-shrink-0">
-                      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-             </a>
 
-             <!-- Carousel Controls -->
-             <div class="flex items-center justify-between mt-4 px-2">
-               <!-- Prev -->
-               <button (click)="prevSlide()" class="w-10 h-10 rounded-full border border-[#1e3a47] bg-[#0b1b21] text-[#0ff] flex items-center justify-center hover:bg-[#0ff]/10 hover:border-[#0ff] transition-all cursor-pointer">
-                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-               </button>
+        <!-- Orbit Rings (subtle, slow) -->
+        <div class="absolute inset-0 z-0 pointer-events-none perspective-[1000px] flex items-center justify-center">
+          <div class="orbit-ring-1"></div>
+          <div class="orbit-ring-2"></div>
+        </div>
 
-               <!-- Dots -->
-               <div class="flex gap-2">
-                 @for (project of projects; track project.id; let i = $index) {
-                   <button 
-                     (click)="goToSlide(i)" 
-                     class="w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer"
-                     [ngClass]="i === currentSlide ? 'bg-[#0ff] w-8 shadow-[0_0_10px_rgba(0,255,255,0.6)]' : 'bg-[#1e3a47] hover:bg-gray-500'"
-                   ></button>
-                 }
+        <div class="relative z-10 hero-mockup-frame rounded-3xl p-3 sm:p-5 overflow-hidden">
+          @if (currentProject) {
+            <!-- Project Screenshot -->
+            <a [href]="currentProject.liveUrl" target="_blank" class="block w-full aspect-video bg-[#030b0e] rounded-2xl relative overflow-hidden group border border-[#1e3a47] cursor-pointer">
+               <img [src]="currentProject.image" [alt]="currentProject.title" referrerpolicy="no-referrer" crossorigin="anonymous" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" (error)="$any($event.target).src='https://placehold.co/1200x630/071318/1e3a47?text=' + currentProject.title">
+               <!-- Overlay with project info -->
+               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6 sm:p-8">
+                 <div class="flex items-end justify-between">
+                   <div class="text-left">
+                     <span class="text-xs font-semibold px-3 py-1 bg-[#0ff]/20 rounded-full text-[#0ff] mb-3 inline-block">{{ currentProject.category }}</span>
+                     <h3 class="text-xl sm:text-2xl font-bold text-white mb-1">{{ currentProject.title }}</h3>
+                     <p class="text-sm text-gray-300 max-w-md hidden sm:block">{{ currentProject.description }}</p>
+                   </div>
+                   <div class="w-12 h-12 rounded-full bg-[#0ff] text-black shadow-[0_0_20px_rgba(0,255,255,0.6)] flex items-center justify-center cursor-pointer hover:scale-110 transition-transform z-20 flex-shrink-0">
+                     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                       <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                     </svg>
+                   </div>
+                 </div>
                </div>
+            </a>
 
-               <!-- Next -->
-               <button (click)="nextSlide()" class="w-10 h-10 rounded-full border border-[#1e3a47] bg-[#0b1b21] text-[#0ff] flex items-center justify-center hover:bg-[#0ff]/10 hover:border-[#0ff] transition-all cursor-pointer">
-                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-               </button>
-             </div>
-           } @else {
-             <!-- Loading skeleton -->
-             <div class="w-full aspect-video bg-[#030b0e] rounded-2xl animate-pulse border border-[#1e3a47]"></div>
-           }
-         </div>
+            <!-- Carousel Controls -->
+            <div class="flex items-center justify-between mt-4 px-2">
+              <!-- Prev -->
+              <button (click)="prevSlide()" class="w-10 h-10 rounded-full border border-[#1e3a47] bg-[#0b1b21] text-[#0ff] flex items-center justify-center hover:bg-[#0ff]/10 hover:border-[#0ff] transition-all cursor-pointer">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+              </button>
 
-         <div class="mt-12 relative z-20">
-            <button routerLink="/agency/projects" class="px-8 py-3 rounded-full font-bold text-sm bg-[#0ff] text-black shadow-[0_0_20px_rgba(0,255,255,0.6)] hover:shadow-[0_0_30px_rgba(0,255,255,0.9)] hover:scale-105 transition-all cursor-pointer">
-              View Portfolio
-            </button>
-         </div>
+              <!-- Dots -->
+              <div class="flex gap-2">
+                @for (project of projects; track project.id; let i = $index) {
+                  <button
+                    (click)="goToSlide(i)"
+                    class="h-2 rounded-full transition-all duration-300 cursor-pointer"
+                    [ngClass]="i === currentSlide ? 'bg-[#0ff] w-8 shadow-[0_0_8px_rgba(0,255,255,0.6)]' : 'bg-[#1e3a47] w-2.5 hover:bg-gray-500'"
+                  ></button>
+                }
+              </div>
+
+              <!-- Next -->
+              <button (click)="nextSlide()" class="w-10 h-10 rounded-full border border-[#1e3a47] bg-[#0b1b21] text-[#0ff] flex items-center justify-center hover:bg-[#0ff]/10 hover:border-[#0ff] transition-all cursor-pointer">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          } @else {
+            <!-- Loading skeleton -->
+            <div class="w-full aspect-video bg-[#030b0e] rounded-2xl animate-pulse border border-[#1e3a47]"></div>
+          }
+        </div>
       </div>
     </section>
 
-    <!-- Trusted By -->
-    <section class="border-y border-gray-800/50 py-10">
-      <div class="text-center mb-6">
-        <p class="text-sm font-semibold text-gray-500 tracking-widest uppercase">Trusted By</p>
-      </div>
-      <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-         <span class="font-bold text-xl font-serif">logoipsum</span>
-         <span class="font-bold text-xl italic">ebay</span>
-         <span class="font-bold text-xl tracking-tighter">amazon</span>
-         <span class="font-bold text-xl font-mono">Microsoft</span>
-         <span class="font-bold text-xl">Shopify</span>
+    <!-- Stats Section -->
+    <section class="border-y border-gray-800/50 py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="stat-item">
+          <div class="text-3xl md:text-4xl font-extrabold text-[#0ff] mb-2">+20</div>
+          <div class="text-sm text-gray-400 font-medium">مشروع منجز</div>
+        </div>
+        <div class="stat-item">
+          <div class="text-3xl md:text-4xl font-extrabold text-[#0ff] mb-2">100%</div>
+          <div class="text-sm text-gray-400 font-medium">رضا العملاء</div>
+        </div>
+        <div class="stat-item">
+          <div class="text-3xl md:text-4xl font-extrabold text-[#0ff] mb-2">3+</div>
+          <div class="text-sm text-gray-400 font-medium">سنوات خبرة</div>
+        </div>
+        <div class="stat-item">
+          <div class="text-3xl md:text-4xl font-extrabold text-[#0ff] mb-2">24/7</div>
+          <div class="text-sm text-gray-400 font-medium">دعم فني</div>
+        </div>
       </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="space-y-12 pb-20">
       <div class="text-center space-y-4 max-w-3xl mx-auto">
-         <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Our Services</h2>
-         <p class="text-gray-400 text-lg">We deliver end-to-end digital solutions proven to accelerate your business.</p>
+         <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">خدماتنا</h2>
+         <p class="text-gray-400 text-lg">كل ما تحتاجه لبناء حضور رقمي قوي ويحقق نتائج حقيقية.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
          @defer (on viewport) {
            <app-glass-card padding="md" class="group hover:-translate-y-2 cursor-pointer transition-transform duration-300 neon-box rounded-2xl block">
-             <div class="w-12 h-12 rounded-full bg-[#071318] flex items-center justify-center border border-[#0ff]/40 text-[#0ff] mb-6 group-hover:bg-[#0ff] group-hover:text-black transition-colors shadow-[0_0_15px_rgba(0,255,255,0.2)] group-hover:shadow-[0_0_20px_rgba(0,255,255,0.6)]">
-               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+             <div class="w-12 h-12 rounded-xl bg-[#071318] flex items-center justify-center border border-[#0ff]/40 text-[#0ff] mb-6 group-hover:bg-[#0ff] group-hover:text-black transition-colors shadow-[0_0_15px_rgba(0,255,255,0.15)] group-hover:shadow-[0_0_20px_rgba(0,255,255,0.5)]">
+               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
              </div>
-             <h3 class="text-xl font-bold text-white mb-3">Web Development</h3>
+             <h3 class="text-xl font-bold text-white mb-3">متاجر إلكترونية</h3>
              <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-               E-commerce platforms, custom web applications along with scalable backend infrastructure.
+               متجر أونلاين يبيع حتى وأنت نايم. بوابات دفع إلكتروني، وإدارة كاملة وسهلة لمنتجاتك وطلباتك.
              </p>
-             <a href="javascript:void(0)" class="text-[#0ff] text-sm font-semibold flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-               View Case Study <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+             <a routerLink="/agency/projects" class="text-[#0ff] text-sm font-semibold flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+               مشاهدة الأعمال <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
              </a>
            </app-glass-card>
 
            <app-glass-card padding="md" class="group hover:-translate-y-2 cursor-pointer transition-transform duration-300 neon-box rounded-2xl block">
-             <div class="w-12 h-12 rounded-full bg-[#071318] flex items-center justify-center border border-[#0ff]/40 text-[#0ff] mb-6 group-hover:bg-[#0ff] group-hover:text-black transition-colors shadow-[0_0_15px_rgba(0,255,255,0.2)] group-hover:shadow-[0_0_20px_rgba(0,255,255,0.6)]">
-               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+             <div class="w-12 h-12 rounded-xl bg-[#071318] flex items-center justify-center border border-[#0ff]/40 text-[#0ff] mb-6 group-hover:bg-[#0ff] group-hover:text-black transition-colors shadow-[0_0_15px_rgba(0,255,255,0.15)] group-hover:shadow-[0_0_20px_rgba(0,255,255,0.5)]">
+               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
              </div>
-             <h3 class="text-xl font-bold text-white mb-3">Mobile Apps</h3>
+             <h3 class="text-xl font-bold text-white mb-3">مواقع الشركات</h3>
              <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-               Cross-platform iOS and Android apps with beautiful, native-like interactions.
+               موقع يخليك تبان أكبر من منافسيك، يعكس احترافيتك ويبني ثقة عملائك من أول نظرة.
              </p>
-             <a href="javascript:void(0)" class="text-[#0ff] text-sm font-semibold flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-               View Case Study <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+             <a routerLink="/agency/projects" class="text-[#0ff] text-sm font-semibold flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+               مشاهدة الأعمال <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
              </a>
            </app-glass-card>
 
            <app-glass-card padding="md" class="group hover:-translate-y-2 cursor-pointer transition-transform duration-300 neon-box rounded-2xl block">
-             <div class="w-12 h-12 rounded-full bg-[#071318] flex items-center justify-center border border-[#0ff]/40 text-[#0ff] mb-6 group-hover:bg-[#0ff] group-hover:text-black transition-colors shadow-[0_0_15px_rgba(0,255,255,0.2)] group-hover:shadow-[0_0_20px_rgba(0,255,255,0.6)]">
-               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+             <div class="w-12 h-12 rounded-xl bg-[#071318] flex items-center justify-center border border-[#0ff]/40 text-[#0ff] mb-6 group-hover:bg-[#0ff] group-hover:text-black transition-colors shadow-[0_0_15px_rgba(0,255,255,0.15)] group-hover:shadow-[0_0_20px_rgba(0,255,255,0.5)]">
+               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
              </div>
-             <h3 class="text-xl font-bold text-white mb-3">Cloud Solutions</h3>
+             <h3 class="text-xl font-bold text-white mb-3">لوحات تحكم وأنظمة</h3>
              <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-               Cloud deployments, SaaS architecture and enterprise-grade data management.
+               نظام يوفر عليك ساعات عمل يومياً، من لوحات تحكم إلى أنظمة إدارة متكاملة لتشغيل عملك بكفاءة.
              </p>
-             <a href="javascript:void(0)" class="text-[#0ff] text-sm font-semibold flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-               View Case Study <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+             <a routerLink="/agency/projects" class="text-[#0ff] text-sm font-semibold flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+               مشاهدة الأعمال <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
              </a>
            </app-glass-card>
          } @placeholder {
            <div class="h-64 rounded-2xl bg-[#0b1b21] animate-pulse border border-[#1e3a47] col-span-1 md:col-span-3"></div>
          }
+      </div>
+    </section>
+
+    <!-- Education Section (Why a Website) -->
+    <section class="space-y-12 pb-20">
+      <div class="text-center space-y-4 max-w-3xl mx-auto">
+         <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">ليه محتاج موقع لعملك؟</h2>
+         <p class="text-gray-400 text-lg">الفرق بين الاعتماد على السوشيال ميديا فقط، وبين امتلاكك لمنصتك الخاصة.</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8" dir="rtl">
+        <!-- Without Website -->
+        <div class="p-8 rounded-2xl border border-red-500/30 bg-red-500/5 flex flex-col relative overflow-hidden">
+           <div class="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
+           <h3 class="text-xl font-bold text-red-400 mb-6 flex items-center gap-2">
+             <span class="text-2xl">📉</span> بدون موقع إلكتروني
+           </h3>
+           <ul class="space-y-4">
+             <li class="flex items-start gap-3 text-gray-300">
+               <span class="text-red-400 font-bold mt-1">❌</span>
+               <span>العملاء لا يجدونك عندما يبحثون في Google.</span>
+             </li>
+             <li class="flex items-start gap-3 text-gray-300">
+               <span class="text-red-400 font-bold mt-1">❌</span>
+               <span>تعتمد كلياً على السوشيال ميديا (معرضة للحظر وتغيير الخوارزميات).</span>
+             </li>
+             <li class="flex items-start gap-3 text-gray-300">
+               <span class="text-red-400 font-bold mt-1">❌</span>
+               <span>مظهر غير احترافي أمام العملاء والشركات الكبيرة.</span>
+             </li>
+             <li class="flex items-start gap-3 text-gray-300">
+               <span class="text-red-400 font-bold mt-1">❌</span>
+               <span>تضييع فرص المبيعات والطلبات أثناء نومك أو انشغالك.</span>
+             </li>
+           </ul>
+        </div>
+
+        <!-- With DarWeb -->
+        <div class="p-8 rounded-2xl border border-[#0ff]/40 bg-[#0ff]/5 flex flex-col relative overflow-hidden shadow-[0_0_20px_rgba(0,255,255,0.1)]">
+           <div class="absolute top-0 left-0 w-32 h-32 bg-[#0ff]/10 rounded-full blur-3xl -ml-10 -mt-10"></div>
+           <div class="absolute top-4 left-4">
+             <span class="relative flex h-4 w-4">
+               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0ff] opacity-40"></span>
+               <span class="relative inline-flex rounded-full h-4 w-4 bg-[#0ff]"></span>
+             </span>
+           </div>
+           <h3 class="text-xl font-bold text-[#0ff] mb-6 flex items-center gap-2">
+             <span class="text-2xl">🚀</span> مع موقع من DarWeb
+           </h3>
+           <ul class="space-y-4">
+             <li class="flex items-start gap-3 text-gray-100 font-medium">
+               <span class="text-[#0ff] font-bold mt-1">✅</span>
+               <span>تظهر في بحث Google للعملاء 24 ساعة يومياً.</span>
+             </li>
+             <li class="flex items-start gap-3 text-gray-100 font-medium">
+               <span class="text-[#0ff] font-bold mt-1">✅</span>
+               <span>موقع تمتلكه أنت للأبد، بقواعدك أنت وبدون قيود.</span>
+             </li>
+             <li class="flex items-start gap-3 text-gray-100 font-medium">
+               <span class="text-[#0ff] font-bold mt-1">✅</span>
+               <span>هوية بصرية قوية تبني الثقة من أول نظرة.</span>
+             </li>
+             <li class="flex items-start gap-3 text-gray-100 font-medium">
+               <span class="text-[#0ff] font-bold mt-1">✅</span>
+               <span>متجر أوتوماتيكي يستقبل الطلبات حتى وأنت نائم.</span>
+             </li>
+           </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="space-y-12 pb-20">
+      <div class="text-center space-y-4 max-w-3xl mx-auto">
+         <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">باقات الأسعار</h2>
+         <p class="text-gray-400 text-lg">أسعار واضحة وشفافة لتناسب حجم نشاطك التجاري.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+         <div class="p-8 rounded-2xl border border-[#1e3a47] bg-[#0b1b21]/60 flex flex-col hover:border-[#0ff]/40 transition-colors">
+            <h3 class="text-xl font-bold text-white mb-2">الباقة الأساسية</h3>
+            <p class="text-sm text-gray-400 mb-6">مناسبة للشركات الناشئة والمشاريع الصغيرة.</p>
+            <div class="mb-6">
+              <span class="text-sm text-gray-400">تبدأ من</span>
+              <div class="text-4xl font-extrabold text-[#0ff] my-1">2,000 <span class="text-lg text-gray-400 font-medium">جنيه</span></div>
+            </div>
+            <ul class="space-y-3 mb-8 flex-grow">
+              <li class="flex items-center gap-2 text-sm text-gray-300">
+                <svg class="w-5 h-5 text-[#0ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                تصميم Landing Page
+              </li>
+              <li class="flex items-center gap-2 text-sm text-gray-300">
+                <svg class="w-5 h-5 text-[#0ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                حتى 5 صفحات تعريفية
+              </li>
+              <li class="flex items-center gap-2 text-sm text-gray-300">
+                <svg class="w-5 h-5 text-[#0ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                متجاوب مع الموبايل والتابلت
+              </li>
+            </ul>
+            <a href="https://wa.me/201152597819?text=مرحباً، أريد الاستفسار عن الباقة الأساسية لتصميم موقع" target="_blank" class="w-full py-3 rounded-full font-bold text-sm text-center border border-[#0ff]/40 text-[#0ff] hover:bg-[#0ff]/10 hover:border-[#0ff] transition-all cursor-pointer">
+              اطلب الباقة
+            </a>
+         </div>
+
+         <div class="p-8 rounded-2xl border-2 border-[#0ff] bg-[#0ff]/5 flex flex-col relative transform md:-translate-y-4 shadow-[0_0_30px_rgba(0,255,255,0.15)]">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#0ff] text-black px-4 py-1 rounded-full text-xs font-bold tracking-wide">الأكثر طلباً</div>
+            <h3 class="text-xl font-bold text-white mb-2">الباقة الاحترافية</h3>
+            <p class="text-sm text-gray-400 mb-6">للتجار اللي محتاجين مبيعات مباشرة.</p>
+            <div class="mb-6">
+              <span class="text-sm text-gray-400">تبدأ من</span>
+              <div class="text-4xl font-extrabold text-[#0ff] my-1">5,000 <span class="text-lg text-gray-400 font-medium">جنيه</span></div>
+            </div>
+            <ul class="space-y-3 mb-8 flex-grow">
+              <li class="flex items-center gap-2 text-sm text-gray-300">
+                <svg class="w-5 h-5 text-[#0ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                متجر إلكتروني كامل
+              </li>
+              <li class="flex items-center gap-2 text-sm text-gray-300">
+                <svg class="w-5 h-5 text-[#0ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                ربط وسائل الدفع والشحن
+              </li>
+              <li class="flex items-center gap-2 text-sm text-gray-300">
+                <svg class="w-5 h-5 text-[#0ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                لوحة تحكم للمنتجات والطلبات
+              </li>
+            </ul>
+            <a href="https://wa.me/201152597819?text=مرحباً، أريد الاستفسار عن الباقة الاحترافية للمتاجر الإلكترونية" target="_blank" class="w-full py-3 rounded-full font-bold text-sm text-center bg-[#0ff] text-black shadow-[0_0_20px_rgba(0,255,255,0.4)] hover:shadow-[0_0_35px_rgba(0,255,255,0.7)] hover:scale-105 transition-all cursor-pointer">
+              اطلب الباقة
+            </a>
+         </div>
+
+         <div class="p-8 rounded-2xl border border-[#1e3a47] bg-[#0b1b21]/60 flex flex-col hover:border-[#0ff]/40 transition-colors">
+            <h3 class="text-xl font-bold text-white mb-2">الباقة المتقدمة</h3>
+            <p class="text-sm text-gray-400 mb-6">أنظمة خاصة وتطبيقات معقدة.</p>
+            <div class="mb-6">
+              <span class="text-sm text-gray-400">التكلفة</span>
+              <div class="text-3xl font-extrabold text-[#0ff] my-1 mt-3">تسعير مخصص</div>
+            </div>
+            <ul class="space-y-3 mb-8 flex-grow">
+              <li class="flex items-center gap-2 text-sm text-gray-300">
+                <svg class="w-5 h-5 text-[#0ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                أنظمة إدارة (SaaS) ولوحات تحكم
+              </li>
+              <li class="flex items-center gap-2 text-sm text-gray-300">
+                <svg class="w-5 h-5 text-[#0ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                منصات تفاعلية مخصصة
+              </li>
+              <li class="flex items-center gap-2 text-sm text-gray-300">
+                <svg class="w-5 h-5 text-[#0ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                أعلى درجات الأمان والأداء
+              </li>
+            </ul>
+            <a href="https://wa.me/201152597819?text=مرحباً، أريد الاستفسار عن تطوير نظام برمجي مخصص" target="_blank" class="w-full py-3 rounded-full font-bold text-sm text-center border border-[#0ff]/40 text-[#0ff] hover:bg-[#0ff]/10 hover:border-[#0ff] transition-all cursor-pointer">
+              تواصل للتسعير
+            </a>
+         </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="space-y-12 pb-20">
+      <div class="text-center space-y-4 max-w-3xl mx-auto">
+         <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">الأسئلة الشائعة</h2>
+         <p class="text-gray-400 text-lg">إجابات سريعة لأكثر الأسئلة اللي بتشغل بال عملائنا.</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl border border-[#1e3a47] bg-[#0b1b21]/60 hover:border-[#0ff]/30 transition-colors">
+          <h3 class="text-white font-bold text-lg mb-3 flex items-start gap-3">
+            <span class="text-[#0ff] text-xl font-black mt-1">؟</span>
+            كم يستغرق بناء الموقع؟
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed pr-6">من أسبوعين إلى 4 أسابيع حسب حجم المشروع وتفاصيله.</p>
+        </div>
+        
+        <div class="p-6 rounded-2xl border border-[#1e3a47] bg-[#0b1b21]/60 hover:border-[#0ff]/30 transition-colors">
+          <h3 class="text-white font-bold text-lg mb-3 flex items-start gap-3">
+            <span class="text-[#0ff] text-xl font-black mt-1">؟</span>
+            هل أحتاج خبرة تقنية لإدارة الموقع؟
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed pr-6">لا تماماً، نحن نتكفل بكل شيء فني ونوفر لك لوحة تحكم سهلة الاستخدام.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-[#1e3a47] bg-[#0b1b21]/60 hover:border-[#0ff]/30 transition-colors">
+          <h3 class="text-white font-bold text-lg mb-3 flex items-start gap-3">
+            <span class="text-[#0ff] text-xl font-black mt-1">؟</span>
+            ماذا لو أردت تعديلات بعد التسليم؟
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed pr-6">نوفر لك فترة دعم فني وتعديلات مجانية لمدة شهر كامل بعد استلام الموقع.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-[#1e3a47] bg-[#0b1b21]/60 hover:border-[#0ff]/30 transition-colors">
+          <h3 class="text-white font-bold text-lg mb-3 flex items-start gap-3">
+            <span class="text-[#0ff] text-xl font-black mt-1">؟</span>
+            هل سيعمل الموقع على الموبايل؟
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed pr-6">بالتأكيد، كل مواقعنا متجاوبة 100% مع كافة أحجام الشاشات والأجهزة.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-[#1e3a47] bg-[#0b1b21]/60 hover:border-[#0ff]/30 transition-colors">
+          <h3 class="text-white font-bold text-lg mb-3 flex items-start gap-3">
+            <span class="text-[#0ff] text-xl font-black mt-1">؟</span>
+            من يمتلك الموقع بعد الانتهاء؟
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed pr-6">أنت المالك الكامل 100% لجميع ملفات الموقع والبيانات، بدون أي قيود.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-[#1e3a47] bg-[#0b1b21]/60 hover:border-[#0ff]/30 transition-colors">
+          <h3 class="text-white font-bold text-lg mb-3 flex items-start gap-3">
+            <span class="text-[#0ff] text-xl font-black mt-1">؟</span>
+            ما هو الحد الأدنى للميزانية للبدء؟
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed pr-6">يمكنك البدء بـ 2,000 جنيه فقط للحصول على صفحة تعريفية احترافية (Landing Page).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="pb-20">
+      <div class="text-center space-y-4 max-w-3xl mx-auto mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">ليه تختار DarWeb؟</h2>
+        <p class="text-gray-400 text-lg">مش بس موقع، ده استثمار في نجاح نشاطك التجاري.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        @defer (on viewport) {
+          <div class="feature-item p-6 rounded-2xl border border-[#1e3a47] bg-[#0b1b21]/60 flex gap-4 hover:border-[#0ff]/40 transition-colors">
+            <div class="w-10 h-10 rounded-lg bg-[#0ff]/10 flex items-center justify-center text-[#0ff] flex-shrink-0 mt-1">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-white font-bold mb-2">أداء عالي وسرعة تحميل</h3>
+              <p class="text-sm text-gray-400 leading-relaxed">مواقعنا محسّنة للسرعة والأداء — لأن كل ثانية تأخير بتكلّفك عملاء.</p>
+            </div>
+          </div>
+          <div class="feature-item p-6 rounded-2xl border border-[#1e3a47] bg-[#0b1b21]/60 flex gap-4 hover:border-[#0ff]/40 transition-colors">
+            <div class="w-10 h-10 rounded-lg bg-[#0ff]/10 flex items-center justify-center text-[#0ff] flex-shrink-0 mt-1">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-white font-bold mb-2">تصميم متجاوب على كل الأجهزة</h3>
+              <p class="text-sm text-gray-400 leading-relaxed">موبايل، تابلت، لاب توب — موقعك هيبان احترافي على أي شاشة.</p>
+            </div>
+          </div>
+          <div class="feature-item p-6 rounded-2xl border border-[#1e3a47] bg-[#0b1b21]/60 flex gap-4 hover:border-[#0ff]/40 transition-colors">
+            <div class="w-10 h-10 rounded-lg bg-[#0ff]/10 flex items-center justify-center text-[#0ff] flex-shrink-0 mt-1">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-white font-bold mb-2">تحسين محركات البحث (SEO)</h3>
+              <p class="text-sm text-gray-400 leading-relaxed">مواقع مبنية بشكل صح من الأساس عشان Google تلاقيك وتعرضك للعملاء.</p>
+            </div>
+          </div>
+          <div class="feature-item p-6 rounded-2xl border border-[#1e3a47] bg-[#0b1b21]/60 flex gap-4 hover:border-[#0ff]/40 transition-colors">
+            <div class="w-10 h-10 rounded-lg bg-[#0ff]/10 flex items-center justify-center text-[#0ff] flex-shrink-0 mt-1">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-white font-bold mb-2">دعم ما بعد التسليم</h3>
+              <p class="text-sm text-gray-400 leading-relaxed">علاقتنا مش بتخلص بعد التسليم — معاك في الصيانة والتطوير.</p>
+            </div>
+          </div>
+        } @placeholder {
+          <div class="h-40 rounded-2xl bg-[#0b1b21] animate-pulse border border-[#1e3a47] md:col-span-2"></div>
+        }
       </div>
     </section>
   </div>

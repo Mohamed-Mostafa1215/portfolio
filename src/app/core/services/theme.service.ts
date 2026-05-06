@@ -10,7 +10,7 @@ export class ThemeService {
   private platformId = inject(PLATFORM_ID);
 
   /** Current theme signal */
-  readonly theme = signal<Theme>(this.getStoredTheme());
+  readonly theme = signal<Theme>(this.getInitialTheme());
 
   /** Whether the current theme is dark */
   readonly isDark = () => this.theme() === 'dark';
@@ -21,6 +21,8 @@ export class ThemeService {
       const current = this.theme();
       if (isPlatformBrowser(this.platformId)) {
         localStorage.setItem('agency-theme', current);
+        // Also apply to <html> for global CSS variable support
+        document.documentElement.setAttribute('data-theme', current);
       }
     });
   }
@@ -30,9 +32,15 @@ export class ThemeService {
     this.theme.set(this.isDark() ? 'light' : 'dark');
   }
 
-  private getStoredTheme(): Theme {
+  private getInitialTheme(): Theme {
     if (!isPlatformBrowser(this.platformId)) return 'dark';
+
+    // 1. Respect explicit user choice stored in localStorage
     const stored = localStorage.getItem('agency-theme');
-    return (stored === 'light' || stored === 'dark') ? stored : 'dark';
+    if (stored === 'light' || stored === 'dark') return stored;
+
+    // 2. Detect system/device preference (iPhone dark mode, Windows dark mode, etc.)
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return prefersDark ? 'dark' : 'light';
   }
 }

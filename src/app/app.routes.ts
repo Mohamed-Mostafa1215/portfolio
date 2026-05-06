@@ -25,37 +25,48 @@ export const routes: Routes = [
         path: 'home',
         loadComponent: () =>
           import('./features/agency/home/home.component').then((c) => c.HomeComponent),
-        data: { title: 'Home | WebDev', description: 'Crafting next-generation digital experiences.' }
+        data: { title: 'الرئيسية | تصميم متجر إلكتروني ومواقع شركات - DarWeb', description: 'نبني مواقع احترافية وتطبيقات تجارية تُحدث فرقاً حقيقياً.' }
       },
       {
         path: 'about',
         loadComponent: () =>
           import('./features/agency/about/about.component').then((c) => c.AboutComponent),
-        data: { title: 'Our Team | WebDev', description: 'Meet the expert team behind your web development needs.' }
+        data: { title: 'من نحن | أفضل شركة تصميم مواقع - DarWeb', description: 'تعرف على فريق الخبراء خلف منصات دار ويب.' }
       },
       {
         path: 'projects',
         loadComponent: () =>
           import('./features/agency/projects/projects.component').then((c) => c.ProjectsComponent),
-        data: { title: 'Projects | WebDev', description: 'Explore our recent work and cutting-edge solutions.' }
+        data: { title: 'أعمالنا | نماذج تصميم مواقع ومتاجر - DarWeb', description: 'تصفح سابقة أعمالنا في تصميم المتاجر الإلكترونية والمواقع التعريفية.' }
       },
       {
         path: 'testimonials',
         loadComponent: () =>
           import('./features/agency/testimonials/testimonials.component').then((c) => c.TestimonialsComponent),
-        data: { title: 'Testimonials | WebDev', description: 'Hear what our clients have to say about working with us.' }
+        data: { title: 'آراء العملاء | DarWeb', description: 'شاهد ماذا يقول عملاؤنا عن خدماتنا.' }
       },
       {
         path: 'contact',
         loadComponent: () =>
           import('./features/agency/contact/contact.component').then((c) => c.ContactComponent),
-        data: { title: 'Contact Us | WebDev', description: 'Reach out and let\'s discuss your next project.' }
+        data: { title: 'تواصل معنا | احصل على استشارة لتصميم موقعك - DarWeb', description: 'تواصل معنا الآن للحصول على استشارة مجانية لمشروعك الرقمي.' }
+      },
+      {
+        path: 'blog',
+        loadComponent: () =>
+          import('./features/agency/blog/blog.component').then((c) => c.BlogComponent),
+        data: { title: 'المدونة | نصائح لنجاح البيزنس أونلاين - DarWeb', description: 'مقالات حول التجارة الإلكترونية، تصميم المواقع، وزيادة المبيعات.' }
+      },
+      {
+        path: 'blog/:slug',
+        loadComponent: () =>
+          import('./features/agency/blog-post/blog-post.component').then((c) => c.BlogPostComponent)
       },
       {
         path: '**',
         loadComponent: () =>
           import('./features/agency/not-found/not-found.component').then((c) => c.NotFoundComponent),
-        data: { title: '404 - Not Found | WebDev', description: 'The page you\'re looking for doesn\'t exist.' }
+        data: { title: 'الصفحة غير موجودة | DarWeb', description: 'الصفحة التي تبحث عنها غير موجودة.' }
       },
     ],
   },

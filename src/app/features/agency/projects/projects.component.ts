@@ -17,6 +17,7 @@ export class ProjectsComponent implements OnInit {
   private agencyService = inject(AgencyService);
   private destroyRef = inject(DestroyRef);
   private cdr = inject(ChangeDetectorRef);
+
   projects: Project[] = [];
   filters = ['All', 'Web', 'Mobile', 'UI/UX'];
   activeFilter = 'All';
@@ -25,7 +26,7 @@ export class ProjectsComponent implements OnInit {
     this.agencyService.getProjects()
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(data => {
-        this.projects = data;
+        this.projects = [...data]; // new reference triggers OnPush
         this.cdr.markForCheck();
       });
   }
@@ -35,7 +36,7 @@ export class ProjectsComponent implements OnInit {
     this.cdr.markForCheck();
   }
 
-  get filteredProjects() {
+  get filteredProjects(): Project[] {
     if (this.activeFilter === 'All') return this.projects;
     return this.projects.filter(p => p.category === this.activeFilter);
   }

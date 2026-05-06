@@ -1,6 +1,13 @@
+/* ============================================================
+   AGENCY LAYOUT — COMPLETE THEME SYSTEM
+   Uses CSS variables for seamless Dark/Light mode switching.
+   Controlled by [data-theme="dark"|"light"] on <html> element,
+   falling back to .light class on .agency-root for compatibility.
+   ============================================================ */
+
 :host { display: block; }
 
-/* ============ ACCESSIBILITY ============ */
+/* ── ACCESSIBILITY ──────────────────────────────────────────── */
 .skip-link {
   position: absolute;
   top: -100%;
@@ -19,157 +26,197 @@
   outline: 2px solid #fff;
   outline-offset: 2px;
 }
-
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
-
-/* Focus visible styles */
 :focus-visible {
   outline: 2px solid #0ff;
   outline-offset: 2px;
 }
 
-/* Mobile nav animation */
+/* ── ANIMATIONS ─────────────────────────────────────────────── */
 @keyframes slideDown {
   from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-.animate-slide-down {
-  animation: slideDown 0.3s ease-out forwards;
-}
-.hamburger-line {
-  transition: all 0.3s ease;
-}
+.animate-slide-down { animation: slideDown 0.3s ease-out forwards; }
+.hamburger-line { transition: all 0.3s ease; }
 
-.indeterminate-bar {
-  width: 100%;
-  transform-origin: left;
-  animation: indeterminate-animation 1.5s infinite linear;
-}
+.indeterminate-bar { width: 100%; transform-origin: left; animation: indeterminate-animation 1.5s infinite linear; }
 @keyframes indeterminate-animation {
-  0% { transform: translateX(-100%) scaleX(0.2); }
-  50% { transform: translateX(0%) scaleX(0.5); }
+  0%   { transform: translateX(-100%) scaleX(0.2); }
+  50%  { transform: translateX(0%) scaleX(0.5); }
   100% { transform: translateX(100%) scaleX(0.2); }
 }
 
-/* ============ DARK THEME (default) ============ */
+/* ── CSS DESIGN TOKENS ──────────────────────────────────────── */
 .agency-root {
-  background: #030b0e;
-  color: #fff;
+  /* Dark Mode Tokens (default) */
+  --bg-base:       #030b0e;
+  --bg-surface:    #0b1b21;
+  --bg-elevated:   #0f2530;
+  --border-subtle: #1e3a47;
+  --border-muted:  rgba(31,59,71,0.6);
+  --text-primary:  #ffffff;
+  --text-secondary:#e2e8f0;
+  --text-muted:    #9ca3af;
+  --text-faint:    #64748b;
+  --accent:        #00ffff;
+  --accent-light:  rgba(0,255,255,0.1);
+  --accent-border: rgba(0,255,255,0.3);
+  --nav-link:      #9ca3af;
+  --nav-active:    #00ffff;
+  --cta-bg:        #00ffff;
+  --cta-text:      #000000;
+  --toggle-bg:     #1a2b33;
+  --toggle-border: #374151;
+  --social-bg:     #0b1b21;
+  --social-border: #1e3a47;
+  --footer-border: rgba(31,41,55,0.5);
+
+  background: var(--bg-base);
+  color: var(--text-primary);
+  transition: background 0.35s ease, color 0.35s ease;
 }
-.logo-icon { color: #0ff; filter: drop-shadow(0 0 8px rgba(0,255,255,0.8)); }
-.logo-text { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.2); }
-.nav-link { color: #9ca3af; }
-.nav-link:hover { color: #fff; }
-.nav-active { color: #0ff !important; }
+
+/* ── LIGHT MODE TOKEN OVERRIDE ──────────────────────────────── */
+.agency-root.light,
+:host-context([data-theme="light"]) .agency-root {
+  --bg-base:       #f8fafc;
+  --bg-surface:    #ffffff;
+  --bg-elevated:   #f1f5f9;
+  --border-subtle: #e2e8f0;
+  --border-muted:  rgba(203,213,225,0.8);
+  --text-primary:  #0f172a;
+  --text-secondary:#1e293b;
+  --text-muted:    #475569;
+  --text-faint:    #64748b;
+  --accent:        #0891b2;
+  --accent-light:  rgba(8,145,178,0.08);
+  --accent-border: rgba(8,145,178,0.35);
+  --nav-link:      #475569;
+  --nav-active:    #0891b2;
+  --cta-bg:        #0891b2;
+  --cta-text:      #ffffff;
+  --toggle-bg:     #e2e8f0;
+  --toggle-border: #cbd5e1;
+  --social-bg:     #ffffff;
+  --social-border: #e2e8f0;
+  --footer-border: #e2e8f0;
+}
+
+/* ── HEADER COMPONENTS ───────────────────────────────────────── */
+.logo-icon { color: var(--accent); filter: drop-shadow(0 0 8px rgba(0,255,255,0.8)); }
+.logo-text { color: var(--text-primary); }
+.agency-root.light .logo-icon { filter: drop-shadow(0 0 6px rgba(8,145,178,0.5)); }
+
+.nav-link { color: var(--nav-link); transition: color 0.2s; }
+.nav-link:hover { color: var(--text-primary); }
+.nav-active { color: var(--nav-active) !important; }
+
 .cta-btn {
-  background: #0ff;
-  color: #000;
+  background: var(--cta-bg);
+  color: var(--cta-text);
   box-shadow: 0 0 15px rgba(0,255,255,0.4);
+  transition: box-shadow 0.2s, transform 0.2s;
 }
-.cta-btn:hover {
-  box-shadow: 0 0 25px rgba(0,255,255,0.6);
-}
+.cta-btn:hover { box-shadow: 0 0 25px rgba(0,255,255,0.6); }
+.agency-root.light .cta-btn { box-shadow: 0 4px 14px rgba(8,145,178,0.3); }
+.agency-root.light .cta-btn:hover { box-shadow: 0 4px 20px rgba(8,145,178,0.5); }
+
+/* ── THEME TOGGLE ───────────────────────────────────────────── */
 .theme-toggle {
-  background: #1a2b33;
-  border: 1px solid #374151;
+  background: var(--toggle-bg);
+  border: 1px solid var(--toggle-border);
 }
 .toggle-knob {
-  background: #0ff;
+  background: var(--accent);
   transform: translateX(0);
+  transition: transform 0.3s ease, background 0.3s ease;
 }
-.toggle-knob.toggled {
-  transform: translateX(26px);
-}
+.toggle-knob.toggled { transform: translateX(26px); }
+.agency-root.light .toggle-knob { background: #f59e0b; }
 .left-icon { left: 6px; top: 50%; transform: translateY(-50%); }
 .right-icon { right: 6px; top: 50%; transform: translateY(-50%); }
 .toggle-icon { position: absolute; pointer-events: none; }
+
+/* ── FOOTER ─────────────────────────────────────────────────── */
 .footer {
-  border-top: 1px solid rgba(31,41,55,0.5);
-  color: #9ca3af;
+  border-top: 1px solid var(--footer-border);
+  color: var(--text-muted);
+  transition: border-color 0.35s ease;
 }
-.footer-heading { color: #fff; }
-.footer-muted { color: #9ca3af; }
-.footer-link { color: #9ca3af; }
-.footer-link:hover { color: #0ff; }
+.footer-heading { color: var(--text-primary); }
+.footer-muted   { color: var(--text-muted); }
+.footer-link    { color: var(--text-muted); transition: color 0.2s; }
+.footer-link:hover { color: var(--accent); }
 .footer-input {
-  background: #0b1b21;
-  border: 1px solid #1e3a47;
-  color: #fff;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  transition: border-color 0.2s;
 }
-.footer-input:focus { border-color: rgba(0,255,255,0.5); }
+.footer-input:focus { border-color: var(--accent); }
 .social-icon {
-  background: #0b1b21;
-  border: 1px solid #1e3a47;
-  color: #0ff;
+  background: var(--social-bg);
+  border: 1px solid var(--social-border);
+  color: var(--accent);
+  transition: background 0.2s, color 0.2s;
 }
 .social-icon:hover {
-  background: #0ff;
-  color: #000;
+  background: var(--accent);
+  color: var(--cta-text);
 }
-.footer-bottom-border { border-top: 1px solid rgba(31,41,55,0.5); }
+.footer-bottom-border { border-top: 1px solid var(--footer-border); }
 
-/* ============ LIGHT THEME ============ */
-.agency-root.light {
-  background: #f0f4f8;
-  color: #1a202c;
+/* ── LIGHT MODE: FIX HARD-CODED DARK CLASSES ────────────────── */
+/* Glass cards & content cards use hard-coded bg/border — override them in light */
+.agency-root.light .neon-box,
+.agency-root.light [class*="bg-[#0b1b21]"],
+.agency-root.light [class*="bg-[#0b1b21]/60"],
+.agency-root.light [class*="bg-[#0b1b21]/95"] {
+  background: var(--bg-surface) !important;
 }
-.agency-root.light .bg-gradient-1 {
-  background: radial-gradient(ellipse at top left, #dbeafe, #f0f4f8, #f0f4f8);
+.agency-root.light [class*="border-[#1e3a47]"],
+.agency-root.light [class*="border-[#1e3a47]/"],
+.agency-root.light [class*="border border-[#1e3"] {
+  border-color: var(--border-subtle) !important;
 }
-.agency-root.light .bg-gradient-2 {
-  background: radial-gradient(ellipse at bottom right, #e0f2fe, #f0f4f8, transparent);
+/* Text colors */
+.agency-root.light .text-gray-400,
+.agency-root.light .text-gray-300 {
+  color: var(--text-muted) !important;
 }
-.agency-root.light .logo-icon { color: #0891b2; }
-.agency-root.light .logo-text { color: #1a202c; }
-.agency-root.light .nav-link { color: #4a5568; }
-.agency-root.light .nav-link:hover { color: #1a202c; }
-.agency-root.light .nav-active { color: #0891b2 !important; }
-.agency-root.light .cta-btn {
-  background: #0891b2;
-  color: #fff;
-  box-shadow: 0 4px 14px rgba(8,145,178,0.3);
+.agency-root.light .text-gray-500 {
+  color: var(--text-faint) !important;
 }
-.agency-root.light .cta-btn:hover {
-  box-shadow: 0 4px 20px rgba(8,145,178,0.5);
+.agency-root.light .text-white {
+  color: var(--text-primary) !important;
 }
-.agency-root.light .theme-toggle {
-  background: #e2e8f0;
-  border: 1px solid #cbd5e1;
+.agency-root.light .text-gray-100 {
+  color: var(--text-secondary) !important;
 }
-.agency-root.light .toggle-knob {
-  background: #f59e0b;
+/* Background gradient fixes */
+.agency-root.light [class*="from-[#0b1b21]"],
+.agency-root.light [class*="to-[#071318]"] {
+  background: linear-gradient(to right, var(--bg-elevated), var(--bg-surface)) !important;
 }
-.agency-root.light .footer {
-  border-top: 1px solid #e2e8f0;
-  color: #4a5568;
+/* Placeholder / skeleton */
+.agency-root.light [class*="bg-[#0b1b21] animate-pulse"] {
+  background: #e2e8f0 !important;
 }
-.agency-root.light .footer-heading { color: #1a202c; }
-.agency-root.light .footer-muted { color: #64748b; }
-.agency-root.light .footer-link { color: #64748b; }
-.agency-root.light .footer-link:hover { color: #0891b2; }
-.agency-root.light .footer-input {
-  background: #fff;
-  border: 1px solid #cbd5e1;
-  color: #1a202c;
+/* Filter buttons in Projects */
+.agency-root.light .border-\[\#1e3a47\].bg-\[\#0b1b21\] {
+  background: var(--bg-surface) !important;
+  border-color: var(--border-subtle) !important;
+  color: var(--text-muted) !important;
 }
-.agency-root.light .footer-input:focus { border-color: #0891b2; }
-.agency-root.light .social-icon {
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  color: #0891b2;
+/* Social proof notification */
+.agency-root.light .fixed.bottom-6.left-6 [class*="bg-[#0b1b21]"] {
+  background: rgba(255,255,255,0.97) !important;
+  border-color: var(--border-subtle) !important;
 }
-.agency-root.light .social-icon:hover {
-  background: #0891b2;
-  color: #fff;
-}
-.agency-root.light .footer-bottom-border { border-top: 1px solid #e2e8f0; }
+.agency-root.light .fixed.bottom-6.left-6 .text-white { color: var(--text-primary) !important; }
+.agency-root.light .fixed.bottom-6.left-6 .text-gray-500 { color: var(--text-faint) !important; }

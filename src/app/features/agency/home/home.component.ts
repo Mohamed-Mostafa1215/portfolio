@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
   }
 
   private startAutoSlide() {
-    this.slideInterval = setInterval(() => this.nextSlide(), 4000);
+    this.slideInterval = setInterval(() => this.nextSlide(), 2500);
   }
 
   private resetAutoSlide() {

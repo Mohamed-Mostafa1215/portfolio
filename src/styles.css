@@ -109,7 +109,7 @@ a:not([href]) { cursor: default; }
   top: -15%;
   left: -15%;
   transform-style: preserve-3d;
-  animation: rotate-ring 6s linear infinite;
+  animation: rotate-ring 20s linear infinite;
 }
 
 .orbit-ring-1::before {
@@ -135,7 +135,7 @@ a:not([href]) { cursor: default; }
   top: -5%;
   left: -5%;
   transform-style: preserve-3d;
-  animation: rotate-ring-reverse 8s linear infinite;
+  animation: rotate-ring-reverse 28s linear infinite;
 }
 
 .orbit-ring-2::before {

@@ -18,6 +18,7 @@
   );
   opacity: 0;
   transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
 .glass-card:hover::before {
@@ -37,6 +38,7 @@
 .glass-glow {
   background: linear-gradient(to right, transparent, rgba(0,255,255,0.3), transparent);
   transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
 .glass-card:hover .glass-glow {

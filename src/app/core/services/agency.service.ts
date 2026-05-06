@@ -23,8 +23,8 @@ export class AgencyService {
   }
 
   submitContactForm(data: ContactForm): Observable<{ success: boolean; message?: string }> {
-    if (!data.email || !data.name || !data.message) {
-      return of({ success: false, message: 'All fields are required' }).pipe(delay(800));
+    if (!data.phone || !data.name || !data.projectType) {
+      return of({ success: false, message: 'All required fields must be filled' }).pipe(delay(800));
     }
     return of({ success: true, message: 'Message sent successfully!' }).pipe(delay(800));
   }

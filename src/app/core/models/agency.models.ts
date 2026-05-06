@@ -5,6 +5,9 @@ export interface Project {
   description: string;
   image: string;
   liveUrl: string;
+  problem?: string;
+  solution?: string;
+  result?: string;
 }
 
 export interface TeamMember {
@@ -20,11 +23,26 @@ export interface Testimonial {
   author: string;
   authorRole: string;
   image: string;
+  city?: string;
+  rating?: number;
 }
 
 export interface ContactForm {
   name: string;
-  email: string;
+  phone: string;
   projectType: string;
-  message: string;
+  budget: string;
+  contactTime: string;
+  message?: string;
+}
+
+export interface BlogPost {
+  id: number;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  image: string;
+  date: string;
+  readTime: string;
 }
